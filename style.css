@@ -1,0 +1,261 @@
+:root {
+    --background-color: #000414;
+    --text-color: #FE0940;
+    --font: VALORANT;
+    --white: #CFCFCF;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: var(--font);
+    cursor: url('Assets/Reaver/1\ -\ Jett\ Kunai\ Normal\ Select.cur'), auto;
+}
+
+.Tittle {
+    position: absolute;
+    color: #FE0940;
+    font-size: 25.62px;
+    font-weight: 400;
+    line-height: 31.95px;
+    word-wrap: break-word;
+    height: 34.16px;
+}
+
+.TheFolio {
+    position: absolute;
+    text-align: center;
+    color: var(--white);
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 144.46px;
+    word-wrap: break-word
+}
+
+.SelfPicture {
+    width: 400px;
+    height: 600px;
+    position: absolute;
+    border-radius: 14.26px;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
+}
+
+.SelfPicture:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
+}
+
+.Component1 {
+    width: 400px;
+    height: 500px;
+    left: 800px;
+    top: 250px;
+    position: absolute;
+    border-radius: 14.26px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: top;
+}
+
+.Component1:hover {
+    transform: scale(1.1);
+}
+
+/* Thêm đoạn mã sau vào CSS hiện tại của bạn */
+.Component1 {
+    width: 400px;
+    height: 500px;
+    left: 800px;
+    top: 250px;
+    position: absolute;
+    border-radius: 14.26px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: top;
+}
+
+.Component1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.5);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.Component1:hover::before {
+    opacity: 0.5;
+}
+
+
+
+.Name {
+    width: 192.26px;
+    height: 24.24px;
+    left: 109.80px;
+    top: 405.69px;
+    position: absolute;
+    color: var(--text-color);
+    font-size: 20.06px;
+    font-weight: 400;
+    line-height: 25.02px;
+    word-wrap: break-word
+}
+
+
+.Frame44-nav {
+    left: 710px;
+    top: 39px;
+    position: absolute;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 25px;
+    display: inline-flex;
+}
+
+.Frame44-nav a {
+    padding: 10px;
+    justify-content: center;
+    align-items: baseline;
+    gap: 10px;
+    display: flex;
+    text-decoration: none;
+}
+
+.Type1 {
+    color: var(--text-color);
+    font-size: 25.62px;
+    font-weight: 400;
+    line-height: 31.95px;
+    word-wrap: break-word;
+}
+
+.Type1:hover {
+    color: var(--white);
+    cursor: url('Assets/Reaver/1\ -\ Jett\ Kunai\ Normal\ Select.cur'), auto;
+}
+
+span {
+    font-size: 108.78px;
+    font-weight: 400;
+    line-height: 135.65px;
+    word-wrap: break-word;
+}
+
+.Type4 {
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 10px;
+    padding-bottom: 6px;
+    top: 600px;
+    position: absolute;
+    border-radius: 5.65px;
+    border: 0.71px rgba(255, 156.61, 156.61, 0.40) solid;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 5.65px;
+    display: inline-flex;
+    height: 30px;
+}
+
+.Type2 {
+    text-align: center;
+    color: var(--white);
+    font-size: 14.13px;
+    font-family: Aldrich;
+    font-weight: 400;
+    line-height: 17.62px;
+    word-wrap: break-word;
+}
+
+.Type2:hover {
+    color: var(--text-color);
+    cursor: url('Assets/Reaver/1\ -\ Jett\ Kunai\ Normal\ Select.cur'), auto;
+}
+
+.Type3 {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    top: 548px;
+    position: absolute;
+    border-radius: 11.16px;
+    border: 0.56px #FF8D8D solid;
+    justify-content: center;
+    align-items: center;
+    gap: 10.05px;
+    display: inline-flex
+}
+
+.Type3 a {
+    text-align: center;
+    color: var(--white);
+    font-size: 22.33px;
+    font-weight: 400;
+    text-decoration: underline;
+    line-height: 27.84px;
+    word-wrap: break-word;
+}
+
+
+.Type3:hover {
+    color: var(--text-color);
+    cursor: url('Assets/Reaver/1\ -\ Jett\ Kunai\ Normal\ Select.cur'), auto;
+}
+
+.Line {
+    position: absolute;
+    border: 2px var(--text-color) solid
+}
+
+.ThankYou {
+    left: 25%;
+    top: 211px;
+    position: absolute;
+    text-align: center;
+    color: var(--white);
+}
+
+.ThankYou span {
+    font-size: 115.85px;
+    font-weight: 400;
+    line-height: 144.46px;
+    word-wrap: break-word
+}
+
+.Type5 {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    top: 548px;
+    position: absolute;
+    border-radius: 11.16px;
+    border: 0.56px #FF8D8D solid;
+    justify-content: center;
+    align-items: center;
+    gap: 10.05px;
+    display: inline-flex;
+    
+}
+
+.Type5 a {
+    text-align: center;
+    font-size: 22.33px;
+    font-weight: 400;
+    line-height: 27.84px;
+    word-wrap: break-word;
+    color: var(--white);
+}
+
+.Type5 a:hover{
+    cursor: url("Assets/Reaver/1\ -\ Jett\ Kunai\ Normal\ Select.cur"), auto;
+    color: var(--text-color);
+}
