@@ -5,20 +5,23 @@
     --white: #CFCFCF;
 }
 
+
+
 body {
     background-color: var(--background-color);
     font-family: var(--font);
     cursor: url('Assets/Reaver/1\ -\ Jett\ Kunai\ Normal\ Select.cur'), auto;
+    content: "(" attr()")";
 }
 
 .Tittle {
     position: absolute;
-    color: #FE0940;
+    color: var(--text-color);
     font-size: 25.62px;
     font-weight: 400;
     line-height: 31.95px;
     word-wrap: break-word;
-    height: 34.16px;
+    height: 30px;
 }
 
 .TheFolio {
@@ -109,23 +112,25 @@ body {
 }
 
 
-.Frame44-nav {
-    left: 710px;
-    top: 39px;
-    position: absolute;
+nav {
+    left: 40%;
+    position: relative;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 25px;
-    display: inline-flex;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
 }
 
-.Frame44-nav a {
+nav a {
     padding: 10px;
-    justify-content: center;
+    justify-content: space-around;
     align-items: baseline;
-    gap: 10px;
+    top: 10%;
     display: flex;
     text-decoration: none;
+    list-style: none;
 }
 
 .Type1 {
@@ -153,7 +158,7 @@ span {
     padding-right: 9px;
     padding-top: 10px;
     padding-bottom: 6px;
-    top: 600px;
+    top: 670px;
     position: absolute;
     border-radius: 5.65px;
     border: 0.71px rgba(255, 156.61, 156.61, 0.40) solid;
@@ -211,13 +216,13 @@ span {
 }
 
 .Line {
-    position: absolute;
+    position: relative;
     border: 2px var(--text-color) solid
 }
 
 .ThankYou {
     left: 25%;
-    top: 211px;
+    top: 120px;
     position: absolute;
     text-align: center;
     color: var(--white);
@@ -235,7 +240,7 @@ span {
     padding-right: 25px;
     padding-top: 7px;
     padding-bottom: 7px;
-    top: 548px;
+    top: 450px;
     position: absolute;
     border-radius: 11.16px;
     border: 0.56px #FF8D8D solid;
@@ -243,7 +248,7 @@ span {
     align-items: center;
     gap: 10.05px;
     display: inline-flex;
-    
+
 }
 
 .Type5 a {
@@ -255,7 +260,29 @@ span {
     color: var(--white);
 }
 
-.Type5 a:hover{
+.Type5 a:hover {
     cursor: url("Assets/Reaver/1\ -\ Jett\ Kunai\ Normal\ Select.cur"), auto;
     color: var(--text-color);
+}
+
+
+.picture2 {
+    width: 400px;
+    height: 600px;
+    position: absolute;
+    border-radius: 15px;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
+}
+
+.name {
+    width: fit-content;
+    left: 10%px;
+    top: 210px;
+}
+
+.Tittle span {
+    font-size: 26px;
+    line-height: 70px;
 }
