@@ -11,3 +11,10 @@ function copyTextToClipboard(elementId, successMessage) {
 
     alert(successMessage);
 }
+
+
+function toggleMenu() {
+    var menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
+}
+
