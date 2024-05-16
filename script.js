@@ -18,3 +18,19 @@ function toggleMenu() {
     menu.classList.toggle('active');
 }
 
+const body = document.querySelector("body");
+const log = document.getElementById("log");
+var newTitle = "Text";
+
+
+function checkDocumentFocus() {
+    if (document.hasFocus()) {
+        log.textContent = "This document has focus.";
+        body.style.background = "white";
+        alert("???????")
+    } else {
+        log.textContent = "This document does not have focus.";
+        body.style.background = "gray";
+        document.title = newTitle;
+    }
+}
