@@ -1,93 +1,708 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Specialist Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <span class="text-xl font-bold text-indigo-600">AI<span
+                class="text-gray-800">Expert</span></span>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#home"
+              class="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Trang
+              chủ</a>
+            <a href="#about"
+              class="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Giới
+              thiệu</a>
+            <a href="#skills"
+              class="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Kỹ
+              năng</a>
+            <a href="#projects"
+              class="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Dự
+              án</a>
+            <a href="#contact"
+              class="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Liên
+              hệ</a>
+          </div>
+          <div class="md:hidden flex items-center">
+            <button id="menu-btn"
+              class="text-gray-700 hover:text-indigo-600">
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Grizmo</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-  <link rel="icon" href="Assets/Component/Logo.png">
-</head>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a href="#home"
+            class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 font-medium">Trang
+            chủ</a>
+          <a href="#about"
+            class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 font-medium">Giới
+            thiệu</a>
+          <a href="#skills"
+            class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 font-medium">Kỹ
+            năng</a>
+          <a href="#projects"
+            class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 font-medium">Dự
+            án</a>
+          <a href="#contact"
+            class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 font-medium">Liên
+            hệ</a>
+        </div>
+      </div>
+    </nav>
 
-<body>
+    <!-- Hero Section -->
+    <section id="home"
+      class="pt-24 pb-16 md:pt-32 md:pb-24 gradient-bg text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Xin
+              chào, tôi là <span class="text-yellow-300"> <br> Hoàng Tuấn
+                Tú</span></h1>
+            <h2
+              class="text-2xl md:text-3xl font-semibold mb-6 typewriter">Lập
+              trình viên Trí tuệ nhân tạo và học máy</h2>
+            <p class="text-lg mb-8">Tôi tập trung nghiên cứu và phát triển các
+              giải pháp ứng dụng Thị giác máy tính, Trí tuê nhân tạo và Học máy
+              trong các lĩnh vực
+              như công nghiệp, y tế, và tự động hóa.</p>
+            <div class="flex space-x-4">
+              <a href="#contact"
+                class="bg-white text-indigo-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition duration-300">Liên
+                hệ ngay</a>
+              <a href="#projects"
+                class="border-2 border-white text-white hover:bg-white hover:text-indigo-600 px-6 py-3 rounded-lg font-semibold transition duration-300">Xem
+                dự án</a>
+            </div>
+          </div>
+          <div class="md:w-1/2 flex justify-center">
+            <div class="relative w-64 h-64 md:w-80 md:h-80">
+              <div
+                class="absolute inset-0 bg-indigo-500 rounded-full opacity-20 blur-xl"></div>
+              <img
+                src="Assets/Self.jpg"
+                alt="AI Specialist"
+                class="relative w-full h-full rounded-full object-cover border-4 border-white shadow-xl floating">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Navigation bar -->
-  <nav class="Frame44-nav">
-    <ul><a class="nav44" href="project.html">projects</a></ul>
-    <ul><a class="nav44" href="skill.html">skills</a></ul>
-    <ul><a class="nav44" href="vision.html">vision</a></ul>
-    <ul><a class="nav44" href="about.html">about</a></ul>
-  </nav>
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">Về <span
+            class="text-indigo-600">Tôi</span></h2>
 
-  <div class="Group1" style="width: fit-content; height: 800px; left: 10px; top: 197px; position: relative">
-    <!-- line1 -->
-    <img class="VBugNegativeOffWhite"
-      style="width: 100px; height: fit-content; left: 10%; top: -250px; position: relative"
-      src="Assets/Component/V_Bug_Negative_Off-White.png" />
-    <div class="Tittle" style="left: 140px; top: -250px;">
-      <span class="logoname">griz</span><span class="logoname" style="color: #CFCFCF;">mo</span>
-    </div>
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+            <div class="relative w-64 h-64">
+              <div
+                class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg blur opacity-75"></div>
+              <img
+                src="Assets/Image.jpg"
+                alt="About me"
+                class="relative w-full h-full rounded-lg object-cover shadow-lg">
+            </div>
+          </div>
+          <div class="md:w-2/3 md:pl-12">
+            <h3 class="text-2xl font-semibold mb-4">Tôi là sinh viên năm cuối
+              ngành Toán Tin</h3>
+            <p class="text-gray-600 mb-6">Tôi hiện là sinh viên năm cuối ngành
+              Toán Tin tại Trường Đại học Khoa học Tự nhiên, ĐHQGHN. Với nền
+              tảng vững về toán học và tư duy lập trình, tôi đang từng bước phát
+              triển kỹ năng trong lĩnh vực Trí tuệ Nhân tạo và Thị giác máy
+              tính. Tôi luôn sẵn sàng học hỏi, chủ động tiếp cận công nghệ mới
+              và mong muốn đóng góp vào các dự án thực tiễn.</p>
 
-    <div class="TheFolio" style="left: 0px; top: 0px;">the </div>
-    <div class="TheFolio" style="left: 229.13px; top: 92.57px;">folio</div>
-    <div class="Tittle" style="width: 300px; left: 91px; top: 250px;">Web Developer </div>
-    <div class="Tittle" style="width: 300px; left: 192px; top: 300px;">portfolio website </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="flex items-start">
+                <div
+                  class="bg-indigo-100 p-3 rounded-full mr-4">
+                  <i
+                    class="fas fa-brain text-indigo-600 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Xử lý ngôn
+                    ngữ tự nhiên</h4>
+                  <p class="text-gray-600 text-sm">Phát triển
+                    hệ thống NLP cho chatbot, phân tích cảm
+                    xúc và dịch máy</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="bg-indigo-100 p-3 rounded-full mr-4">
+                  <i
+                    class="fas fa-eye text-indigo-600 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Thị giác máy
+                    tính</h4>
+                  <p class="text-gray-600 text-sm">Xây dựng hệ
+                    thống nhận diện hình ảnh, video và xử lý
+                    ảnh y tế</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="bg-indigo-100 p-3 rounded-full mr-4">
+                  <i
+                    class="fas fa-chart-line text-indigo-600 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Phân tích dữ
+                    liệu</h4>
+                  <p class="text-gray-600 text-sm">Xây dựng mô
+                    hình dự đoán và phân tích dữ liệu
+                    lớn</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="bg-indigo-100 p-3 rounded-full mr-4">
+                  <i
+                    class="fas fa-robot text-indigo-600 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Hệ thống đề
+                    xuất</h4>
+                  <p class="text-gray-600 text-sm">Phát triển
+                    hệ thống gợi ý sản phẩm và nội dung cá
+                    nhân hóa</p>
+                </div>
+              </div>
+            </div>
 
-    <!-- line2 - big line -->
-    <div class="Line"
-      style="width: 150px; left: 239.21px; top: 72.41px; position: absolute; border: 18.33px #FE0940 solid"></div>
-  </div>
+            <div class="flex flex-wrap gap-4">
+              <a href="#"
+                class="flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg">
+                <i
+                  class="fab fa-linkedin text-indigo-600 mr-2"></i>
+                LinkedIn
+              </a>
+              <a href="https://github.com/Grizmo2610"
+                class="flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg"
+                target="_blank">
+                <i class="fab fa-github text-gray-800 mr-2"></i>
+                GitHub
+              </a>
+              <a href="Assets\CV.pdf"
+                class="flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg"
+                target="_blank">
+                <i
+                  class="fas fa-file-pdf text-red-500 mr-2"></i>
+                Tải CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div style="left: 900px; top: 90px; position: absolute; text-align: center"><span
-      style="color: #CFCFCF;">20</span><span style="color: #FE0940;">23</span>
-    <!-- line3 -->
-    <div class="Line" style="width: 140%; left: 0; top: 0%;"></div>
-  </div>
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-4">Kỹ năng <span
+            class="text-indigo-600">Chuyên môn</span></h2>
+        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Tôi đã tích
+          lũy được nhiều kỹ năng chuyên sâu trong lĩnh vực AI và học máy qua các
+          dự án cá nhân</p>
 
-  <div class="Line18" style="width: 101px; height: 0px; border: 1px black solid"></div>
-  <div class="Component1">
-    <img class="SelfPicture" src="Assets/Image/SelfPicture.png" alt="SelfPicture" />
-    <div class="Name">Hoang Tuan Tu </div>
-    <img class="Classes" src="Assets/Component/Classes.png"
-      style="width: 14.21px; height: 14.21px; left: 88.41px; top: 409.25px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
-    </img>
-  </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Technical Skills -->
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <h3
+              class="text-xl font-semibold mb-6 flex items-center">
+              <i class="fas fa-code text-indigo-600 mr-3"></i>
+              Kỹ thuật
+            </h3>
+            <div class="space-y-5">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Python</span>
+                  <span class="text-gray-600">95%</span>
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5">
+                  <div
+                    class="skill-bar bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 95%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Machine
+                    Learning</span>
+                  <span class="text-gray-600">80%</span>
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5">
+                  <div
+                    class="skill-bar bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 80%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Deep
+                    Learning</span>
+                  <span class="text-gray-600">60%</span>
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5">
+                  <div
+                    class="skill-bar bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 60%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span
+                    class="font-medium">TensorFlow/PyTorch</span>
+                  <span class="text-gray-600">60%</span>
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5">
+                  <div
+                    class="skill-bar bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 60%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <div class="Type4" style="left: 50px;">
-    <img class="LinearMessagesConversationMailbox" src="Assets/Linear/Messages/Mailbox.png"></img>
-    <div class="Type2" id="email" onclick="copyTextToClipboard('email', 'Copied email')">hoangtuantu893@gmail.com</div>
-  </div>
+          <!-- Professional Skills -->
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <h3
+              class="text-xl font-semibold mb-6 flex items-center">
+              <i
+                class="fas fa-chart-line text-indigo-600 mr-3"></i>
+              Kỹ năng mềm
+            </h3>
+            <div class="space-y-5">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Giải quyết vấn
+                    đề</span>
+                  <span class="text-gray-600">92%</span>
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5">
+                  <div
+                    class="skill-bar bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 92%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Làm việc
+                    nhóm</span>
+                  <span class="text-gray-600">85%</span>
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5">
+                  <div
+                    class="skill-bar bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 85%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Giao tiếp</span>
+                  <span class="text-gray-600">75%</span>
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5">
+                  <div
+                    class="skill-bar bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 75%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Quản lý dự
+                    án</span>
+                  <span class="text-gray-600">80%</span>
+                </div>
+                <div
+                  class="w-full bg-gray-200 rounded-full h-2.5">
+                  <div
+                    class="skill-bar bg-indigo-600 h-2.5 rounded-full"
+                    style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <div class="Type4" style="left: 350px;">
-    <img class="LinearCallCallChat" src="Assets/Linear/Call/CallChat.png"></img>
-    <div class="Type2" id="phoneNumber" onclick="copyTextToClipboard('phoneNumber', 'Copied Phone Number')">+84
-      379061825</div>
-  </div>
+        <!-- Tech Stack -->
+        <div class="mt-12 bg-white p-6 rounded-xl shadow-md">
+          <h3 class="text-xl font-semibold mb-6 flex items-center">
+            <i class="fas fa-cogs text-indigo-600 mr-3"></i>
+            Công nghệ sử dụng
+          </h3>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <div
+              class="tech-item flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition">
+              <i
+                class="fab fa-python text-4xl text-blue-500 mb-2"></i>
+              <span class="text-sm">Python</span>
+            </div>
+            <div
+              class="tech-item flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition">
+              <i
+                class="fas fa-robot text-4xl text-yellow-500 mb-2"></i>
+              <span class="text-sm">TensorFlow</span>
+            </div>
+            <div
+              class="tech-item flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition">
+              <i
+                class="fas fa-fire text-4xl text-red-500 mb-2"></i>
+              <span class="text-sm">PyTorch</span>
+            </div>
+            <div
+              class="tech-item flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition">
+              <i
+                class="fab fa-js text-4xl text-yellow-300 mb-2"></i>
+              <span class="text-sm">JavaScript</span>
+            </div>
+            <div
+              class="tech-item flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition">
+              <i
+                class="fas fa-database text-4xl text-blue-400 mb-2"></i>
+              <span class="text-sm">SQL</span>
+            </div>
+            <div
+              class="tech-item flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition">
+              <i
+                class="fab fa-git-alt text-4xl text-orange-600 mb-2"></i>
+              <span class="text-sm">Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class="Type4" style=" left: 560px; padding-top: 5px; padding-bottom: 7.29px;">
-    <img class="LinearArrowsActionDownloadMinimalistic" src="Assets/Linear/ArrowsAction/Download.png"></img>
-    <a class="Type2" href="Assets/CV.pdf" download>DOWNLOAD CV</a>
-  </div>
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-4">Dự án <span
+            class="text-indigo-600">Tiêu biểu</span></h2>
+        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Các
+          dự án tôi đã tham gia phát triển với nhiều giải pháp AI sáng
+          tạo và hiệu quả.</p>
 
-  <div class="End" style="width: 90%; height: 80%; position: absolute">
-    <!-- higher line -->
-    <div class="Line" style="width: 40%;"></div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="project-card bg-white rounded-xl shadow-md overflow-hidden transition duration-500 hover:shadow-xl">
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="AI Chatbot"
+                class="w-full h-full object-cover transition duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-2">
+                <span
+                  class="bg-indigo-100 text-indigo-600 text-xs font-semibold px-2.5 py-0.5 rounded">NLP</span>
+                <span
+                  class="bg-blue-100 text-blue-600 text-xs font-semibold px-2.5 py-0.5 rounded ml-2">Chatbot</span>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Hệ thống Chatbot
+                đa ngôn ngữ</h3>
+              <p class="text-gray-600 mb-4">Phát triển chatbot hỗ
+                trợ khách hàng với khả năng hiểu và trả lời bằng
+                nhiều ngôn ngữ khác nhau.</p>
+              <div class="flex justify-between items-center">
+                <a href="#"
+                  class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                  Xem chi tiết
+                  <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <div class="flex space-x-2">
+                  <i
+                    class="fab fa-github text-gray-500 hover:text-gray-700 cursor-pointer"></i>
+                  <i
+                    class="fas fa-external-link-alt text-gray-500 hover:text-gray-700 cursor-pointer"></i>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <!-- lower line -->
-    <div class="Line" style="width: 50%; left: 30%; top: 90%;"></div>
+          <!-- Project 2 -->
+          <div
+            class="project-card bg-white rounded-xl shadow-md overflow-hidden transition duration-500 hover:shadow-xl">
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80"
+                alt="Medical Imaging"
+                class="w-full h-full object-cover transition duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-2">
+                <span
+                  class="bg-indigo-100 text-indigo-600 text-xs font-semibold px-2.5 py-0.5 rounded">Computer
+                  Vision</span>
+                <span
+                  class="bg-green-100 text-green-600 text-xs font-semibold px-2.5 py-0.5 rounded ml-2">Y
+                  tế</span>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Hệ thống chẩn
+                đoán hình ảnh y tế</h3>
+              <p class="text-gray-600 mb-4">Mô hình deep learning
+                hỗ trợ bác sĩ phát hiện các bất thường trong
+                hình ảnh X-quang và MRI.</p>
+              <div class="flex justify-between items-center">
+                <a href="#"
+                  class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                  Xem chi tiết
+                  <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <div class="flex space-x-2">
+                  <i
+                    class="fab fa-github text-gray-500 hover:text-gray-700 cursor-pointer"></i>
+                  <i
+                    class="fas fa-external-link-alt text-gray-500 hover:text-gray-700 cursor-pointer"></i>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <div class="ThankYou"><span>thank </span><span style="color: #F02626;">you</span><span>!</span></div>
+          <!-- Project 3 -->
+          <div
+            class="project-card bg-white rounded-xl shadow-md overflow-hidden transition duration-500 hover:shadow-xl">
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Recommendation System"
+                class="w-full h-full object-cover transition duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-2">
+                <span
+                  class="bg-indigo-100 text-indigo-600 text-xs font-semibold px-2.5 py-0.5 rounded">ML</span>
+                <span
+                  class="bg-purple-100 text-purple-600 text-xs font-semibold px-2.5 py-0.5 rounded ml-2">Đề
+                  xuất</span>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Hệ thống đề xuất
+                sản phẩm</h3>
+              <p class="text-gray-600 mb-4">Hệ thống đề xuất sản
+                phẩm cá nhân hóa cho trang thương mại điện tử,
+                tăng 30% doanh thu.</p>
+              <div class="flex justify-between items-center">
+                <a href="#"
+                  class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                  Xem chi tiết
+                  <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <div class="flex space-x-2">
+                  <i
+                    class="fab fa-github text-gray-500 hover:text-gray-700 cursor-pointer"></i>
+                  <i
+                    class="fas fa-external-link-alt text-gray-500 hover:text-gray-700 cursor-pointer"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <div class="Quete">Need for A Developer<br />contact me!
-    </div>
+        <div class="text-center mt-12">
+          <a href="#"
+            class="inline-flex items-center px-6 py-3 border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white rounded-lg font-medium transition duration-300">
+            <i class="fas fa-folder-open mr-2"></i>
+            Xem tất cả dự án
+          </a>
+        </div>
+      </div>
+    </section>
 
-    <div class="Type5" style="left: 30%;"><a href="https://www.facebook.com/tuantu2610/">Facebook</a>
-    </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-4">Liên hệ <span
+            class="text-indigo-600">Với tôi</span></h2>
+        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Bạn
+          có dự án cần tư vấn hoặc câu hỏi về AI? Hãy liên hệ ngay để
+          được hỗ trợ.</p>
 
-    <div class="Type5" style="left: 60%;"><a href="https://www.instagram.com/tuantu2610/">Instagram </a>
-    </div>
-  </div>
-</body>
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-1/2">
+            <div class="bg-indigo-50 p-8 rounded-xl">
+              <h3 class="text-xl font-semibold mb-6">Thông tin
+                liên hệ</h3>
 
-</html>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <div
+                    class="bg-indigo-100 p-3 rounded-full mr-4">
+                    <i
+                      class="fas fa-envelope text-indigo-600"></i>
+                  </div>
+                  <div>
+                    <h4
+                      class="font-medium text-gray-700">Email</h4>
+                    <a href="mailto:hoangtuantu893@gmail.com"
+                      class="text-indigo-600 hover:underline">hoangtuantu893@gmail.com</a>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div
+                    class="bg-indigo-100 p-3 rounded-full mr-4">
+                    <i
+                      class="fas fa-phone-alt text-indigo-600"></i>
+                  </div>
+                  <div>
+                    <h4
+                      class="font-medium text-gray-700">Điện
+                      thoại</h4>
+                    <a href="tel:+84987654321"
+                      class="text-indigo-600 hover:underline">+84
+                      379 061 825</a>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div
+                    class="bg-indigo-100 p-3 rounded-full mr-4">
+                    <i
+                      class="fas fa-map-marker-alt text-indigo-600"></i>
+                  </div>
+                  <div>
+                    <h4
+                      class="font-medium text-gray-700">Địa
+                      chỉ</h4>
+                    <p class="text-gray-600">Vũ Trọng Phụng, Thanh Xuân, Hà
+                      Nội</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <h3 class="text-xl font-semibold mb-4">Mạng xã
+                  hội</h3>
+                <div class="flex space-x-3">
+                  <a href="#"
+                    class="bg-white p-3 rounded-full text-indigo-600 hover:bg-indigo-100 transition">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="https://github.com/Grizmo2610"
+                    class="bg-white p-3 rounded-full text-indigo-600 hover:bg-indigo-100 transition">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://www.facebook.com/tuantu2610/"
+                    class="bg-white p-3 rounded-full text-indigo-600 hover:bg-indigo-100 transition">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:w-1/2">
+            <form id="contact-form" class="bg-white p-8 rounded-xl shadow-md"
+              class="bg-white p-8 rounded-xl shadow-md" method="POST">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label for="name"
+                    class="block text-sm font-medium text-gray-700 mb-1">Họ và
+                    tên</label>
+                  <input type="text" id="name" name="name" required
+                    autocomplete="name"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div>
+                  <label for="email"
+                    class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                  <input type="email" id="email" name="email" required
+                    autocomplete="email"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+              </div>
+              <div class="mb-6">
+                <label for="subject"
+                  class="block text-sm font-medium text-gray-700 mb-1">Chủ
+                  đề</label>
+                <input type="text" id="subject" name="subject" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+              </div>
+              <div class="mb-6">
+                <label for="message"
+                  class="block text-sm font-medium text-gray-700 mb-1">Nội
+                  dung</label>
+                <textarea id="message" name="message" rows="5" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+              </div>
+              <button type="submit"
+                class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-lg font-medium transition duration-300">
+                <i class="fas fa-paper-plane mr-2"></i>
+                Gửi tin nhắn
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="md:col-span-2">
+            <h3 class="text-xl font-bold mb-4">AI<span
+                class="text-indigo-400">Expert</span></h3>
+            <p class="text-gray-400 mb-4">Lập trình viên Trí tuệ Nhân tạo với
+              kiến thức trong nghiên cứu phát triển các giải pháp AI ứng dụng
+              thực tế.</p>
+            <div class="flex space-x-3">
+              <a href="#"
+                class="text-gray-400 hover:text-white transition">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/Grizmo2610"
+                class="text-gray-400 hover:text-white transition">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.facebook.com/tuantu2610/"
+                class="text-gray-400 hover:text-white transition">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
+        </footer>
+
+        <!-- Back to top button -->
+        <button id="back-to-top"
+          class="fixed bottom-8 right-8 bg-indigo-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <script src="script.js"></script>
+        <script type="text/javascript"
+          src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script
+          type="text/javascript">emailjs.init('n65_60mG85-KFx7DD');</script>
+      </body>
+    </html>
