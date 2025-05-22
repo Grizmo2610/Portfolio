@@ -93,16 +93,3 @@ contactForm.addEventListener('submit', (e) => {
     // Reset form
     contactForm.reset();
 });
-
-document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    emailjs.sendForm('service_e9rjof8', 'template_6m1r15g', this)
-        .then(function () {
-            alert('Gửi thành công!');
-            document.getElementById('contact-form').reset();
-        }, function (error) {
-            alert('Gửi thất bại. Vui lòng thử lại.');
-            console.log('FAILED...', error);
-        });
-});
