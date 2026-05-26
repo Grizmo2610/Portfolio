@@ -1,95 +1,106 @@
-// Mobile menu toggle
-const menuBtn = document.getElementById('menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
+// Initialize Lucide icons
+    lucide.createIcons();
 
-menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-});
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-
-        window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-        });
-
-        // Close mobile menu if open
-        mobileMenu.classList.add('hidden');
-    });
-});
-
-// Back to top button
-const backToTopBtn = document.getElementById('back-to-top');
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        backToTopBtn.classList.remove('opacity-0', 'invisible');
-        backToTopBtn.classList.add('opacity-100', 'visible');
-    } else {
-        backToTopBtn.classList.remove('opacity-100', 'visible');
-        backToTopBtn.classList.add('opacity-0', 'invisible');
-    }
-});
-
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Animate skill bars on scroll
-const skillBars = document.querySelectorAll('.skill-bar');
-
-function animateSkillBars() {
-    skillBars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 100);
-    });
-}
-
-// Intersection Observer for skill bars animation
-const skillsSection = document.getElementById('skills');
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            animateSkillBars();
-            observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          revealObserver.unobserve(entry.target);
         }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll > 50) {
+        navbar.style.background = 'rgba(10, 10, 10, 0.85)';
+        navbar.style.backdropFilter = 'blur(20px)';
+        navbar.style.borderBottom = '1px solid rgba(34, 34, 34, 0.5)';
+      } else {
+        navbar.style.background = 'transparent';
+        navbar.style.backdropFilter = 'none';
+        navbar.style.borderBottom = '1px solid transparent';
+      }
+
+      lastScroll = currentScroll;
     });
-}, { threshold: 0.1 });
 
-observer.observe(skillsSection);
+    // Active nav link
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-// Form submission
-const contactForm = document.querySelector('form');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
 
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-    // Here you would typically send the data to a server
-    console.log({ name, email, subject, message });
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
 
-    // Show success message
-    alert('Cảm ơn bạn đã liên hệ! Tôi sẽ phản hồi sớm nhất có thể.');
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
 
-    // Reset form
-    contactForm.reset();
-});
+    // Back to top
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 500) {
+        backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+        backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+      } else {
+        backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+        backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Typed effect for hero
+    const heroTagline = document.querySelector('.hero-tagline');
+    if (heroTagline) {
+      const text = heroTagline.textContent;
+      heroTagline.textContent = '';
+      let i = 0;
+      function typeWriter() {
+        if (i < text.length) {
+          heroTagline.textContent += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, 50);
+        }
+      }
+      setTimeout(typeWriter, 500);
+    }

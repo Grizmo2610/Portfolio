@@ -1,216 +1,511 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Specialist Portfolio</title>
+    <title>Hoang Tuan Tu — AI Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="public\Logo.png" type="image/png">
+    <script src="tailwind.js"></script>
   </head>
-  <body class="bg-gray-50 text-gray-800">
+  <body class="bg-dark-950 text-white font-sans antialiased">
+
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white shadow-md z-50">
+    <nav id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-          <div class="flex items-center">
-            <span class="text-xl font-bold text-indigo-600">AI<span
-                class="text-gray-800">Expert</span></span>
-          </div>
-          <div class="hidden md:flex items-center space-x-8">
-            <a href="#home"
-              class="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Trang
-              chủ</a>
+        <div class="flex items-center justify-between h-16">
+          <a href="#hero" class="font-mono font-bold text-lg tracking-tight">
+            <span class="text-accent">></span> HTT
+          </a>
+          <!-- Desktop Nav -->
+          <div class="hidden md:flex items-center gap-6">
             <a href="#about"
-              class="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Giới
-              thiệu</a>
+              class="nav-link text-sm text-gray-400 hover:text-white transition-colors">About</a>
+            <a href="#experience"
+              class="nav-link text-sm text-gray-400 hover:text-white transition-colors">Experience</a>
             <a href="#skills"
-              class="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Kỹ
-              năng</a>
+              class="nav-link text-sm text-gray-400 hover:text-white transition-colors">Skills</a>
             <a href="#projects"
-              class="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Dự
-              án</a>
+              class="nav-link text-sm text-gray-400 hover:text-white transition-colors">Projects</a>
+            <a href="#education"
+              class="nav-link text-sm text-gray-400 hover:text-white transition-colors">Education</a>
             <a href="#contact"
-              class="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Liên
-              hệ</a>
+              class="bg-accent hover:bg-accent-dark text-white px-4 py-2 rounded text-sm font-medium transition-all hover:shadow-lg hover:shadow-accent/25">Contact</a>
           </div>
-          <div class="md:hidden flex items-center">
-            <button id="menu-btn"
-              class="text-gray-700 hover:text-indigo-600">
-              <i class="fas fa-bars text-2xl"></i>
-            </button>
-          </div>
+          <!-- Mobile Menu Button -->
+          <button id="mobileMenuBtn" class="md:hidden text-white">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
         </div>
       </div>
-
-      <!-- Mobile menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a href="#home"
-            class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 font-medium">Trang
-            chủ</a>
+      <!-- Mobile Menu -->
+      <div id="mobileMenu"
+        class="hidden md:hidden bg-dark-900/95 backdrop-blur-lg border-t border-dark-700">
+        <div class="px-4 py-4 space-y-3">
           <a href="#about"
-            class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 font-medium">Giới
-            thiệu</a>
+            class="block text-gray-300 hover:text-accent transition-colors py-2">About</a>
+          <a href="#experience"
+            class="block text-gray-300 hover:text-accent transition-colors py-2">Experience</a>
           <a href="#skills"
-            class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 font-medium">Kỹ
-            năng</a>
+            class="block text-gray-300 hover:text-accent transition-colors py-2">Skills</a>
           <a href="#projects"
-            class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 font-medium">Dự
-            án</a>
+            class="block text-gray-300 hover:text-accent transition-colors py-2">Projects</a>
+          <a href="#education"
+            class="block text-gray-300 hover:text-accent transition-colors py-2">Education</a>
           <a href="#contact"
-            class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 font-medium">Liên
-            hệ</a>
+            class="block bg-accent text-white text-center py-2 rounded font-medium">Contact</a>
         </div>
       </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home"
-      class="pt-24 pb-16 md:pt-32 md:pb-24 gradient-bg text-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row items-center">
-          <div class="md:w-1/2 mb-10 md:mb-0">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Xin
-              chào, tôi là <span class="text-yellow-300"> <br> Hoàng Tuấn
-                Tú</span></h1>
-            <h2
-              class="text-2xl md:text-3xl font-semibold mb-6 typewriter">Lập
-              trình viên Trí tuệ nhân tạo và học máy</h2>
-            <p class="text-lg mb-8">Tôi tập trung nghiên cứu và phát triển các
-              giải pháp ứng dụng Thị giác máy tính, Trí tuê nhân tạo và Học máy
-              trong các lĩnh vực
-              như công nghiệp, y tế, và tự động hóa.</p>
-            <div class="flex space-x-4">
+    <section id="hero"
+      class="relative min-h-screen flex items-center hero-grid overflow-hidden">
+      <!-- Background Decorations -->
+      <div
+        class="absolute top-20 right-10 w-72 h-72 bg-accent/5 rounded-full blur-[100px]"></div>
+      <div
+        class="absolute bottom-20 left-10 w-96 h-96 bg-accent/3 rounded-full blur-[120px]"></div>
+      <div
+        class="absolute top-1/3 right-1/4 w-2 h-2 bg-accent rounded-full animate-pulse-red"></div>
+      <div
+        class="absolute top-2/3 left-1/3 w-1.5 h-1.5 bg-accent rounded-full animate-pulse-red"
+        style="animation-delay: 1s;"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6 animate-fade-up">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-3 h-3 bg-accent rounded-full animate-pulse-red"></div>
+              <span
+                class="font-mono text-sm text-accent tracking-wider uppercase">Available
+                for hire</span>
+            </div>
+
+            <!-- Mobile: show small avatar next to name -->
+            <div class="flex items-center gap-4 lg:hidden mb-2">
+              <div
+                class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-accent/40 flex-shrink-0 shadow-lg shadow-accent/10">
+                <img src="http://static.photos/people/200x200/33"
+                  alt="Hoang Tuan Tu" class="w-full h-full object-cover">
+              </div>
+              <div class="space-y-1">
+                <p class="font-mono text-gray-500 text-sm">// hello_world.py</p>
+                <h1
+                  class="hero-title text-4xl sm:text-5xl font-bold leading-none glitch-text">
+                  HOANG <span class="text-gradient">TUAN TU</span>
+                </h1>
+              </div>
+            </div>
+            <!-- Desktop: name without avatar (avatar is in the visual column) -->
+            <div class="hidden lg:block space-y-2">
+              <p class="font-mono text-gray-500 text-sm">// hello_world.py</p>
+              <h1
+                class="hero-title text-5xl sm:text-6xl lg:text-7xl font-bold leading-none glitch-text">
+                HOANG<br>
+                <span class="text-gradient">TUAN TU</span>
+              </h1>
+            </div>
+
+            <div class="flex items-center gap-2 text-gray-400">
+              <i data-lucide="cpu" class="w-5 h-5 text-accent"></i>
+              <span class="text-lg sm:text-xl font-light">AI Engineer · ML · CV
+                · NLP</span>
+            </div>
+
+            <p
+              class="text-gray-500 font-mono text-sm max-w-lg leading-relaxed">AI
+              Engineer with 1+ year of hands-on internship experience building
+              production-grade deep learning systems for medical imaging and
+              LLM-powered pipelines. Proficient in <span
+                class="text-accent">PyTorch</span>, <span
+                class="text-accent">TensorFlow</span>, <span
+                class="text-accent">FastAPI</span>, and <span
+                class="text-accent">C++</span>.</p>
+
+            <div class="flex flex-wrap gap-3 pt-2">
+              <a href="#experience"
+                class="group bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded font-medium transition-all hover:shadow-lg hover:shadow-accent/25 flex items-center gap-2">
+                View Work
+                <i data-lucide="arrow-down"
+                  class="w-4 h-4 group-hover:translate-y-1 transition-transform"></i>
+              </a>
               <a href="#contact"
-                class="bg-white text-indigo-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition duration-300">Liên
-                hệ ngay</a>
-              <a href="#projects"
-                class="border-2 border-white text-white hover:bg-white hover:text-indigo-600 px-6 py-3 rounded-lg font-semibold transition duration-300">Xem
-                dự án</a>
+                class="border border-dark-500 hover:border-accent text-gray-300 hover:text-accent px-6 py-3 rounded font-medium transition-all">
+                Get in Touch
+              </a>
+            </div>
+
+            <div class="flex items-center gap-4 pt-4">
+              <a href="https://linkedin.com/in/grizmo" target="_blank"
+                class="text-gray-500 hover:text-accent transition-colors">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </a>
+              <a href="https://grizmo.netlify.app" target="_blank"
+                class="text-gray-500 hover:text-accent transition-colors">
+                <i data-lucide="globe" class="w-5 h-5"></i>
+              </a>
+              <a href="https://github.com/Grizmo2610" target="_blank"
+                class="text-gray-500 hover:text-accent transition-colors">
+                <i data-lucide="github" class="w-5 h-5"></i>
+              </a>
+              <a href="mailto:hoangtuantu893@gmail.com"
+                class="text-gray-500 hover:text-accent transition-colors">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </a>
             </div>
           </div>
-          <div class="md:w-1/2 flex justify-center">
-            <div class="relative w-64 h-64 md:w-80 md:h-80">
+
+          <!-- Hero Visual -->
+          <div class="flex justify-center items-center">
+            <div class="relative animate-float">
+              <div class="w-72 h-72 sm:w-80 sm:h-80 relative">
+                <!-- Decorative rings -->
+                <div
+                  class="absolute inset-0 border border-dark-600 rounded-full"></div>
+                <div
+                  class="absolute inset-4 border border-dark-700 rounded-full"></div>
+                <div
+                  class="absolute inset-8 border border-accent/20 rounded-full"></div>
+
+                <!-- Personal Photo -->
+                <div
+                  class="absolute inset-12 rounded-full overflow-hidden border-2 border-accent/40 shadow-lg shadow-accent/10">
+                  <div class="w-full h-full rounded-full overflow-hidden">
+                    <img src="public/Image.jpg"
+                      alt="Hoang Tuan Tu" class="w-full h-full object-cover">
+                  </div>
+                  <!-- Gradient overlay at bottom -->
+                  <div
+                    class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark-950/60 to-transparent rounded-b-full"></div>
+                </div>
+
+                <!-- Accent ring around photo -->
+                <div
+                  class="absolute inset-10 border-2 border-accent/30 rounded-full animate-spin"
+                  style="animation-duration: 20s;"></div>
+                <div
+                  class="absolute inset-[38px] border border-dashed border-accent/10 rounded-full animate-spin"
+                  style="animation-duration: 30s; animation-direction: reverse;"></div>
+
+                <!-- Orbiting dots -->
+                <div
+                  class="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-accent rounded-full shadow-lg shadow-accent/50 animate-pulse-red"></div>
+                <div
+                  class="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-accent/60 rounded-full"></div>
+                <div
+                  class="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-accent/40 rounded-full"></div>
+                <div
+                  class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-accent/40 rounded-full"></div>
+              </div>
+
+              <!-- Floating stat cards -->
               <div
-                class="absolute inset-0 bg-indigo-500 rounded-full opacity-20 blur-xl"></div>
-              <img
-                src="public/Self.jpg"
-                alt="AI Specialist"
-                class="relative w-full h-full rounded-full object-cover border-4 border-white shadow-xl floating">
+                class="absolute -top-4 -right-4 bg-dark-800 border border-dark-600 rounded-lg p-3 shadow-xl shadow-black/50">
+                <div
+                  class="font-mono text-accent text-sm font-bold">PyTorch</div>
+                <div
+                  class="text-[10px] text-gray-500 uppercase tracking-wider">Deep
+                  Learning</div>
+              </div>
+
+              <div
+                class="absolute -bottom-4 -left-4 bg-dark-800 border border-dark-600 rounded-lg p-3 shadow-xl shadow-black/50">
+                <div class="font-mono text-accent text-sm font-bold">Computer
+                  Vision</div>
+                <div
+                  class="text-[10px] text-gray-500 uppercase tracking-wider">Segmentation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600">
+        <span class="text-xs font-mono">scroll</span>
+        <div class="w-px h-8 bg-gradient-to-b from-accent to-transparent"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative">
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="reveal">
+          <div class="flex items-center gap-3 mb-12">
+            <div class="h-px flex-1 bg-dark-600"></div>
+            <span
+              class="font-mono text-sm text-accent tracking-wider">about_me</span>
+            <div class="h-px flex-1 bg-dark-600"></div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Stat Cards -->
+            <div class="space-y-4">
+              <div
+                class="bg-dark-800 border border-dark-600 rounded-xl p-6 hover:border-accent/50 transition-all duration-300">
+                <div class="flex items-center gap-3 mb-3">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <i data-lucide="brain" class="w-5 h-5 text-accent"></i>
+                  </div>
+                  <span class="text-sm text-gray-400">Medical Imaging</span>
+                </div>
+                <div class="text-3xl font-bold font-mono text-accent">~90%</div>
+                <div class="text-xs text-gray-500 mt-1">DICE Score on UNet
+                  Segmentation</div>
+              </div>
+
+              <div
+                class="bg-dark-800 border border-dark-600 rounded-xl p-6 hover:border-accent/50 transition-all duration-300">
+                <div class="flex items-center gap-3 mb-3">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <i data-lucide="sparkles" class="w-5 h-5 text-accent"></i>
+                  </div>
+                  <span class="text-sm text-gray-400">Content Generation</span>
+                </div>
+                <div class="text-3xl font-bold font-mono text-accent">~60%</div>
+                <div class="text-xs text-gray-500 mt-1">Reduction in Manual
+                  Editing Time</div>
+              </div>
+
+              <div
+                class="bg-dark-800 border border-dark-600 rounded-xl p-6 hover:border-accent/50 transition-all duration-300">
+                <div class="flex items-center gap-3 mb-3">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <i data-lucide="globe" class="w-5 h-5 text-accent"></i>
+                  </div>
+                  <span class="text-sm text-gray-400">Multilingual NLP</span>
+                </div>
+                <div class="text-3xl font-bold font-mono text-accent">3+</div>
+                <div class="text-xs text-gray-500 mt-1">Language Pairs
+                  Supported</div>
+              </div>
+            </div>
+
+            <!-- Bio -->
+            <div class="md:col-span-2 space-y-6">
+              <h2 class="text-3xl sm:text-4xl font-bold">
+                Crafting <span class="text-accent">Intelligence</span><br>
+                That Works in Production
+              </h2>
+              <p class="text-gray-400 leading-relaxed">
+                AI Engineer with 1+ year of hands-on internship experience
+                building production-grade deep learning systems for medical
+                imaging and LLM-powered content pipelines. Proficient in
+                PyTorch, TensorFlow, FastAPI, and C++.
+              </p>
+              <p class="text-gray-500 leading-relaxed">
+                Demonstrated ability to deliver measurable results — from
+                achieving near-zero data transfer errors in DICOM communication
+                layers to building multilingual document processing workflows.
+                I'm actively seeking a full-time AI/ML Engineer role to build
+                scalable, real-world AI systems.
+              </p>
+
+              <div class="grid grid-cols-2 gap-4 pt-4">
+                <div class="flex items-center gap-3 text-sm text-gray-400">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-accent"></i>
+                  Thanh Xuan, Hanoi
+                </div>
+                <div class="flex items-center gap-3 text-sm text-gray-400">
+                  <i data-lucide="phone" class="w-4 h-4 text-accent"></i>
+                  +84 379 061 825
+                </div>
+                <div class="flex items-center gap-3 text-sm text-gray-400">
+                  <i data-lucide="mail" class="w-4 h-4 text-accent"></i>
+                  hoangtuantu893@gmail.com
+                </div>
+                <div class="flex items-center gap-3 text-sm text-gray-400">
+                  <i data-lucide="graduation-cap"
+                    class="w-4 h-4 text-accent"></i>
+                  VNU Hanoi — Math & CS
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-12">Về <span
-            class="text-indigo-600">Tôi</span></h2>
+        <div class="reveal">
+          <div class="flex items-center gap-3 mb-16">
+            <div class="h-px flex-1 bg-dark-600"></div>
+            <span
+              class="font-mono text-sm text-accent tracking-wider">work_experience</span>
+            <div class="h-px flex-1 bg-dark-600"></div>
+          </div>
+        </div>
 
-        <div class="flex flex-col md:flex-row items-center">
-          <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
-            <div class="relative w-64 h-64">
+        <!-- Timeline -->
+        <div class="relative">
+          <!-- Timeline line -->
+          <div
+            class="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-dark-600"></div>
+
+          <!-- VietRad -->
+          <div class="reveal relative mb-16 md:mb-20">
+            <div class="flex flex-col md:flex-row gap-8">
+              <!-- Timeline dot -->
               <div
-                class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg blur opacity-75"></div>
-              <img
-                src="public/Image.jpg"
-                alt="About me"
-                class="relative w-full h-full rounded-lg object-cover shadow-lg">
+                class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-dark-950 z-10 shadow-lg shadow-accent/50"></div>
+
+              <!-- Date -->
+              <div class="md:w-1/2 md:text-right md:pr-12 pl-12 md:pl-0">
+                <div
+                  class="inline-flex items-center gap-2 bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-mono mb-3">
+                  <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                  Nov 2024 – Apr 2025
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="md:w-1/2 md:pl-12 pl-12">
+                <div
+                  class="bg-dark-800 border border-dark-600 rounded-xl p-6 hover:border-accent/30 transition-all duration-300">
+                  <div class="flex items-center gap-3 mb-4">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                      <i data-lucide="stethoscope"
+                        class="w-5 h-5 text-accent"></i>
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold">AI Engineer</h3>
+                      <p class="text-accent font-mono text-sm">VietRad</p>
+                    </div>
+                  </div>
+                  <ul class="space-y-3 text-gray-400 text-sm">
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="chevron-right"
+                        class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+                      Achieved <span class="text-white font-medium">~90% DICE
+                        score</span> on medical image segmentation by
+                      engineering UNet-based deep learning models with PyTorch
+                      and custom data augmentation on a proprietary DICOM
+                      dataset.
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="chevron-right"
+                        class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+                      Architected a <span class="text-white font-medium">DICOM
+                        communication layer in C/C++</span> enabling stable,
+                      low-latency data exchange — reducing data transfer errors
+                      to near zero.
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="chevron-right"
+                        class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+                      Collaborated with medical professionals to validate model
+                      outputs, iterating on training pipelines to meet clinical
+                      accuracy thresholds.
+                    </li>
+                  </ul>
+
+                  <div class="flex flex-wrap gap-2 mt-4">
+                    <span
+                      class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">PyTorch</span>
+                    <span
+                      class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">UNet</span>
+                    <span
+                      class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">C/C++</span>
+                    <span
+                      class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">DICOM</span>
+                    <span
+                      class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">Medical
+                      Imaging</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="md:w-2/3 md:pl-12">
-            <h3 class="text-2xl font-semibold mb-4">Tôi là sinh viên năm cuối
-              ngành Toán Tin</h3>
-            <p class="text-gray-600 mb-6">Tôi hiện là sinh viên năm cuối ngành
-              Toán Tin tại Trường Đại học Khoa học Tự nhiên, ĐHQGHN. Với nền
-              tảng vững về toán học và tư duy lập trình, tôi đang từng bước phát
-              triển kỹ năng trong lĩnh vực Trí tuệ Nhân tạo và Thị giác máy
-              tính. Tôi luôn sẵn sàng học hỏi, chủ động tiếp cận công nghệ mới
-              và mong muốn đóng góp vào các dự án thực tiễn.</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div class="flex items-start">
-                <div
-                  class="bg-indigo-100 p-3 rounded-full mr-4">
-                  <i
-                    class="fas fa-brain text-indigo-600 text-xl"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold mb-1">Mô hình ngôn ngữ lớn</h4>
-                  <p class="text-gray-600 text-sm">Triển khai và sử dụng các mô
-                    hình ngôn ngữ lớn trong các ứng dụng sử dụng dữ liệu dạng
-                    text</p>
-                </div>
-              </div>
-              <div class="flex items-start">
-                <div
-                  class="bg-indigo-100 p-3 rounded-full mr-4">
-                  <i
-                    class="fas fa-eye text-indigo-600 text-xl"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold mb-1">Thị giác máy
-                    tính</h4>
-                  <p class="text-gray-600 text-sm">Xây dựng hệ
-                    thống nhận diện hình ảnh, video và xử lý
-                    ảnh y tế</p>
-                </div>
-              </div>
-              <div class="flex items-start">
-                <div
-                  class="bg-indigo-100 p-3 rounded-full mr-4">
-                  <i
-                    class="fas fa-chart-line text-indigo-600 text-xl"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold mb-1">Phân tích dữ
-                    liệu</h4>
-                  <p class="text-gray-600 text-sm">Xây dựng mô
-                    hình dự đoán và phân tích dữ liệu
-                    lớn</p>
-                </div>
-              </div>
-              <div class="flex items-start">
-                <div
-                  class="bg-indigo-100 p-3 rounded-full mr-4">
-                  <i
-                    class="fas fa-robot text-indigo-600 text-xl"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold mb-1">Hệ thống đề
-                    xuất</h4>
-                  <p class="text-gray-600 text-sm">Phát triển
-                    hệ thống gợi ý sản phẩm và nội dung cá
-                    nhân hóa</p>
-                </div>
-              </div>
-            </div>
+          <!-- AI MAX -->
+          <div class="reveal relative">
+            <div
+              class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-dark-500 rounded-full border-4 border-dark-950 z-10"></div>
 
-            <div class="flex flex-wrap gap-4">
-              <a href="https://www.linkedin.com/in/t%C3%BA-ho%C3%A0ng-431113368/"
-                class="flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg">
-                <i
-                  class="fab fa-linkedin text-indigo-600 mr-2"></i>
-                LinkedIn
-              </a>
-              <a href="https://github.com/Grizmo2610"
-                class="flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg"
-                target="_blank">
-                <i class="fab fa-github text-gray-800 mr-2"></i>
-                GitHub
-              </a>
-              <a href="public\HoangTuanTu.pdf"
-                class="flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg"
-                target="_blank">
-                <i
-                  class="fas fa-file-pdf text-red-500 mr-2"></i>
-                Tải CV
-              </a>
+            <div class="flex flex-col md:flex-row gap-8">
+              <!-- Content (left side on md) -->
+              <div class="md:w-1/2 md:pr-12 pl-12 md:pl-0 order-2 md:order-1">
+                <div
+                  class="bg-dark-800 border border-dark-600 rounded-xl p-6 hover:border-accent/30 transition-all duration-300">
+                  <div class="flex items-center gap-3 mb-4">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                      <i data-lucide="sparkles" class="w-5 h-5 text-accent"></i>
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold">AI Engineer Intern</h3>
+                      <p class="text-accent font-mono text-sm">AI MAX</p>
+                    </div>
+                  </div>
+                  <ul class="space-y-3 text-gray-400 text-sm">
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="chevron-right"
+                        class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+                      Engineered <span class="text-white font-medium">LLM-based
+                        content generation pipelines</span> achieving ~90%
+                      stylistic similarity for automated TikTok/YouTube content
+                      — reducing manual editing by ~60%.
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="chevron-right"
+                        class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+                      Built multilingual document processing workflows
+                      supporting PDF, DOCX, and slides using <span
+                        class="text-white font-medium">PyMuPDF</span> and <span
+                        class="text-white font-medium">python-docx</span>.
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="chevron-right"
+                        class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"></i>
+                      Designed and deployed end-to-end NLP systems — document
+                      parsing, structured generation, and language
+                      transformation into a single <span
+                        class="text-white font-medium">FastAPI</span>-based
+                      service.
+                    </li>
+                  </ul>
+
+                  <div class="flex flex-wrap gap-2 mt-4">
+                    <span
+                      class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">LLM</span>
+                    <span
+                      class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">FastAPI</span>
+                    <span
+                      class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">Flask</span>
+                    <span
+                      class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">NLP</span>
+                    <span
+                      class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">Python</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Date (right side on md) -->
+              <div class="md:w-1/2 pl-12 md:pl-0 order-1 md:order-2">
+                <div
+                  class="inline-flex items-center gap-2 bg-dark-700 text-gray-300 px-3 py-1 rounded-full text-sm font-mono mb-3">
+                  <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                  Jun 2024 – Sep 2024
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -218,183 +513,178 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-16 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-4">Kỹ năng <span
-            class="text-indigo-600">Chuyên môn</span></h2>
-        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Tôi đã tích
-          lũy được nhiều kỹ năng chuyên sâu trong lĩnh vực AI và học máy qua các
-          dự án cá nhân</p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Technical Skills -->
-          <div class="bg-white p-6 rounded-xl shadow-md">
-            <h3
-              class="text-xl font-semibold mb-6 flex items-center">
-              <i class="fas fa-code text-indigo-600 mr-3"></i>
-              Kỹ thuật
-            </h3>
-            <div class="space-y-5">
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span class="font-medium">Python</span>
-                  <span class="text-gray-600">95%</span>
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5">
-                  <div
-                    class="skill-bar bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 95%"></div>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span class="font-medium">Machine
-                    Learning</span>
-                  <span class="text-gray-600">80%</span>
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5">
-                  <div
-                    class="skill-bar bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 80%"></div>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span class="font-medium">Deep
-                    Learning</span>
-                  <span class="text-gray-600">60%</span>
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5">
-                  <div
-                    class="skill-bar bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 60%"></div>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span
-                    class="font-medium">TensorFlow/PyTorch</span>
-                  <span class="text-gray-600">60%</span>
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5">
-                  <div
-                    class="skill-bar bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 60%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Professional Skills -->
-          <div class="bg-white p-6 rounded-xl shadow-md">
-            <h3
-              class="text-xl font-semibold mb-6 flex items-center">
-              <i
-                class="fas fa-chart-line text-indigo-600 mr-3"></i>
-              Kỹ năng mềm
-            </h3>
-            <div class="space-y-5">
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span class="font-medium">Giải quyết vấn
-                    đề</span>
-                  <span class="text-gray-600">92%</span>
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5">
-                  <div
-                    class="skill-bar bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 92%"></div>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span class="font-medium">Làm việc
-                    nhóm</span>
-                  <span class="text-gray-600">85%</span>
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5">
-                  <div
-                    class="skill-bar bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 85%"></div>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span class="font-medium">Giao tiếp</span>
-                  <span class="text-gray-600">75%</span>
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5">
-                  <div
-                    class="skill-bar bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 75%"></div>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span class="font-medium">Quản lý dự
-                    án</span>
-                  <span class="text-gray-600">80%</span>
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2.5">
-                  <div
-                    class="skill-bar bg-indigo-600 h-2.5 rounded-full"
-                    style="width: 80%"></div>
-                </div>
-              </div>
-            </div>
+    <section id="skills" class="py-24 relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950"></div>
+      <div
+        class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/3 rounded-full blur-[150px]"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="reveal">
+          <div class="flex items-center gap-3 mb-16">
+            <div class="h-px flex-1 bg-dark-600"></div>
+            <span
+              class="font-mono text-sm text-accent tracking-wider">tech_stack</span>
+            <div class="h-px flex-1 bg-dark-600"></div>
           </div>
         </div>
 
-        <!-- Tech Stack -->
-        <div class="mt-12 bg-white p-6 rounded-xl shadow-md">
-          <h3 class="text-xl font-semibold mb-6 flex items-center">
-            <i class="fas fa-cogs text-indigo-600 mr-3"></i>
-            Công nghệ sử dụng
-          </h3>
-          <div class="flex flex-wrap gap-4 justify-center">
-            <div
-              class="tech-item flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition">
-              <i
-                class="fab fa-python text-4xl text-blue-500 mb-2"></i>
-              <span class="text-sm">Python</span>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Machine Learning -->
+          <div
+            class="reveal bg-dark-800 border border-dark-600 rounded-xl p-6 hover:border-accent/30 transition-all duration-300 group">
+            <div class="flex items-center gap-3 mb-5">
+              <div
+                class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                <i data-lucide="trending-up" class="w-5 h-5 text-accent"></i>
+              </div>
+              <h3 class="font-bold text-lg">Machine Learning</h3>
             </div>
-            <div
-              class="tech-item flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition">
-              <i
-                class="fas fa-robot text-4xl text-yellow-500 mb-2"></i>
-              <span class="text-sm">TensorFlow</span>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Scikit-learn</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Pandas</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">NumPy</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Supervised/Unsupervised</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Feature
+                Engineering</span>
             </div>
-            <div
-              class="tech-item flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition">
-              <i
-                class="fas fa-fire text-4xl text-red-500 mb-2"></i>
-              <span class="text-sm">PyTorch</span>
+          </div>
+
+          <!-- Deep Learning -->
+          <div
+            class="reveal bg-dark-800 border border-dark-600 rounded-xl p-6 hover:border-accent/30 transition-all duration-300 group">
+            <div class="flex items-center gap-3 mb-5">
+              <div
+                class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                <i data-lucide="brain" class="w-5 h-5 text-accent"></i>
+              </div>
+              <h3 class="font-bold text-lg">Deep Learning</h3>
             </div>
-            <div
-              class="tech-item flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition">
-              <i
-                class="fab fa-js text-4xl text-yellow-300 mb-2"></i>
-              <span class="text-sm">JavaScript</span>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">PyTorch</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">TensorFlow</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Keras</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Transfer
+                Learning</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Model
+                Deployment</span>
             </div>
-            <div
-              class="tech-item flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition">
-              <i
-                class="fas fa-database text-4xl text-blue-400 mb-2"></i>
-              <span class="text-sm">SQL</span>
+          </div>
+
+          <!-- Computer Vision -->
+          <div
+            class="reveal bg-dark-800 border border-dark-600 rounded-xl p-6 hover:border-accent/30 transition-all duration-300 group">
+            <div class="flex items-center gap-3 mb-5">
+              <div
+                class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                <i data-lucide="eye" class="w-5 h-5 text-accent"></i>
+              </div>
+              <h3 class="font-bold text-lg">Computer Vision</h3>
             </div>
-            <div
-              class="tech-item flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition">
-              <i
-                class="fab fa-git-alt text-4xl text-orange-600 mb-2"></i>
-              <span class="text-sm">Git</span>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">YOLO</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">FaceNet</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">UNet</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Segmentation</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Filtering</span>
+            </div>
+          </div>
+
+          <!-- NLP / LLM -->
+          <div
+            class="reveal bg-dark-800 border border-dark-600 rounded-xl p-6 hover:border-accent/30 transition-all duration-300 group">
+            <div class="flex items-center gap-3 mb-5">
+              <div
+                class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                <i data-lucide="message-square" class="w-5 h-5 text-accent"></i>
+              </div>
+              <h3 class="font-bold text-lg">NLP / LLM</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">LLM
+                APIs</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Prompt
+                Engineering</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Multilingual</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Document
+                Parsing</span>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div
+            class="reveal bg-dark-800 border border-dark-600 rounded-xl p-6 hover:border-accent/30 transition-all duration-300 group">
+            <div class="flex items-center gap-3 mb-5">
+              <div
+                class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                <i data-lucide="server" class="w-5 h-5 text-accent"></i>
+              </div>
+              <h3 class="font-bold text-lg">Backend</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">FastAPI</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Flask</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Django</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">REST
+                APIs</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">C/C++
+                Backend</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">PostgreSQL</span>
+            </div>
+          </div>
+
+          <!-- Tools & Languages -->
+          <div
+            class="reveal bg-dark-800 border border-dark-600 rounded-xl p-6 hover:border-accent/30 transition-all duration-300 group">
+            <div class="flex items-center gap-3 mb-5">
+              <div
+                class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                <i data-lucide="wrench" class="w-5 h-5 text-accent"></i>
+              </div>
+              <h3 class="font-bold text-lg">Tools & Languages</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-accent font-medium">Python</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">C/C++</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Java</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Git/GitHub</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Docker</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">CI/CD</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">Linux</span>
+              <span
+                class="skill-tag px-3 py-1.5 bg-dark-700 border border-dark-600 rounded-lg text-sm text-gray-300 hover:border-accent/50">English
+                B2</span>
             </div>
           </div>
         </div>
@@ -402,305 +692,387 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-white">
+    <section id="projects" class="py-24 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-4">Dự án <span
-            class="text-indigo-600">Tiêu biểu</span></h2>
-        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Các
-          dự án tôi đã tham gia phát triển với nhiều giải pháp AI sáng
-          tạo và hiệu quả.</p>
-
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Project 1 -->
-          <div
-            class="project-card bg-white rounded-xl shadow-md overflow-hidden transition duration-500 hover:shadow-xl">
-            <div class="h-48 overflow-hidden">
-              <img
-                src="public/AIBot.avif"
-                alt="AI Chatbot"
-                class="w-full h-full object-cover transition duration-500 hover:scale-110">
-            </div>
-            <div class="p-6">
-              <div class="flex items-center mb-2">
-                <span
-                  class="bg-indigo-100 text-indigo-600 text-xs font-semibold px-2.5 py-0.5 rounded">LLM</span>
-                <span
-                  class="bg-blue-100 text-blue-600 text-xs font-semibold px-2.5 py-0.5 rounded ml-2">Text
-                  to Speech</span>
-              </div>
-              <h3 class="text-xl font-bold mb-2">Hệ thống Chatbot
-                đa ngôn ngữ</h3>
-              <p class="text-gray-600 mb-4">Sử dụng Selenium và webdriver đọc và
-                đăng nhập vào tài khoản google sau đó truy cập địa chỉ của phòng
-                google meet và tìm đến phần trò chuyện đọc và chuyển thành giọng
-                nói. </p>
-              <div class="flex justify-between items-center">
-                <a href="#"
-                  class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
-                  Xem chi tiết
-                  <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div
-            class="project-card bg-white rounded-xl shadow-md overflow-hidden transition duration-500 hover:shadow-xl">
-            <div class="h-48 overflow-hidden">
-              <img
-                src="public/imagesegmentation.webp"
-                alt="Medical Imaging"
-                class="w-full h-full object-cover transition duration-500 hover:scale-110">
-            </div>
-            <div class="p-6">
-              <div class="flex items-center mb-2">
-                <span
-                  class="bg-indigo-100 text-indigo-600 text-xs font-semibold px-2.5 py-0.5 rounded">Computer
-                  Vision</span>
-                <span
-                  class="bg-green-100 text-green-600 text-xs font-semibold px-2.5 py-0.5 rounded ml-2">PyTorch</span>
-              </div>
-              <h3 class="text-xl font-bold mb-2">Phân đoạn hình ảnh</h3>
-              <p class="text-gray-600 mb-4">Xây dựng Mô hình UNet phân đoạn hình
-                ảnh với PyTorch và huấn luyện trên tập dữ liệu COCO2017 với độ
-                chính xác khoảng 80%.</p>
-              <div class="flex justify-between items-center">
-                <a href="#"
-                  class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
-                  Xem chi tiết
-                  <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div
-            class="project-card bg-white rounded-xl shadow-md overflow-hidden transition duration-500 hover:shadow-xl">
-            <div class="h-48 overflow-hidden">
-              <img
-                src="public\Beginners-Guide-Recommender-Systems-Collaborative-Filtering-620x340.jpg"
-                alt="Recommendation System"
-                class="w-full h-full object-cover transition duration-500 hover:scale-110">
-            </div>
-            <div class="p-6">
-              <div class="flex items-center mb-3">
-                <span
-                  class="bg-indigo-100 text-indigo-600 text-xs font-semibold px-2.5 py-0.5 rounded">ML</span>
-                <span
-                  class="bg-green-100 text-green-600 text-xs font-semibold px-2.5 py-0.5 rounded ml-2">Data</span>
-                <span
-                  class="bg-purple-100 text-purple-600 text-xs font-semibold px-2.5 py-0.5 rounded ml-3">Đề
-                  xuất</span>
-              </div>
-              <h3 class="text-xl font-bold mb-2">Hệ thống đề xuất
-                sản phẩm Phim Anime</h3>
-              <p class="text-gray-600 mb-4">Hệ thống đề xuất Anime cho người
-                dùng dựa trên nhu cầu, sở thích cá nhân và lịch sử xem phim.</p>
-              <div class="flex justify-between items-center">
-                <a
-                  href="https://www.kaggle.com/code/grizmo/anime-recomendations-system"
-                  target="_blank"
-                  class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
-                  Xem chi tiết
-                  <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-              </div>
-            </div>
+        <div class="reveal">
+          <div class="flex items-center gap-3 mb-16">
+            <div class="h-px flex-1 bg-dark-600"></div>
+            <span
+              class="font-mono text-sm text-accent tracking-wider">personal_projects</span>
+            <div class="h-px flex-1 bg-dark-600"></div>
           </div>
         </div>
 
-        <div class="text-center mt-12">
-          <a href="https://github.com/Grizmo2610"
-            class="inline-flex items-center px-6 py-3 border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white rounded-lg font-medium transition duration-300">
-            <i class="fas fa-folder-open mr-2"></i>
-            Xem tất cả dự án
-          </a>
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Face Attendance System -->
+          <div
+            class="reveal project-card bg-dark-800 border border-dark-600 rounded-xl overflow-hidden group">
+            <div class="overflow-hidden h-48">
+              <img src="http://static.photos/technology/640x360/42"
+                alt="Face Attendance System"
+                class="project-img w-full h-full object-cover transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                <span
+                  class="text-accent font-mono text-xs uppercase tracking-wider">Computer
+                  Vision</span>
+              </div>
+              <h3
+                class="text-xl font-bold mb-3 group-hover:text-accent transition-colors">Face
+                Attendance System</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                Real-time face detection and recognition pipeline using YOLO for
+                detection and MobileFaceNet for feature extraction with
+                PostgreSQL-backed feature store.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">PyTorch</span>
+                <span
+                  class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">YOLO</span>
+                <span
+                  class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">FaceNet</span>
+                <span
+                  class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">FastAPI</span>
+                <span
+                  class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">PostgreSQL</span>
+              </div>
+              <a href="https://github.com/Grizmo2610/Face-Attendance-System"
+                target="_blank"
+                class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-accent transition-colors">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                View on GitHub
+                <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Age Estimation -->
+          <div
+            class="reveal project-card bg-dark-800 border border-dark-600 rounded-xl overflow-hidden group">
+            <div class="overflow-hidden h-48">
+              <img src="http://static.photos/science/640x360/17"
+                alt="Age Estimation"
+                class="project-img w-full h-full object-cover transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                <span
+                  class="text-accent font-mono text-xs uppercase tracking-wider">Deep
+                  Learning</span>
+              </div>
+              <h3
+                class="text-xl font-bold mb-3 group-hover:text-accent transition-colors">Age
+                Estimation from Biometric Images</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                Multi-task deep learning model predicting subject age with ~4.0
+                RMSE, leveraging auxiliary attribute prediction tasks to improve
+                accuracy.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">PyTorch</span>
+                <span
+                  class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">Multi-Task
+                  CNN</span>
+                <span
+                  class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">Transfer
+                  Learning</span>
+              </div>
+              <a href="https://github.com/Grizmo2610/AGE-ESTIMATION"
+                target="_blank"
+                class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-accent transition-colors">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                View on GitHub
+                <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Image Colorization -->
+          <div
+            class="reveal project-card bg-dark-800 border border-dark-600 rounded-xl overflow-hidden group">
+            <div class="overflow-hidden h-48">
+              <img src="http://static.photos/abstract/640x360/55"
+                alt="Image Colorization"
+                class="project-img w-full h-full object-cover transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                <span
+                  class="text-accent font-mono text-xs uppercase tracking-wider">Federated
+                  Learning</span>
+              </div>
+              <h3
+                class="text-xl font-bold mb-3 group-hover:text-accent transition-colors">Image
+                Colorization via CNN & Federated Learning</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                Implemented color propagation image processing using CNN with
+                federated learning architecture for privacy-preserving
+                distributed training.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">PyTorch</span>
+                <span
+                  class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">CNN</span>
+                <span
+                  class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">Federated
+                  Learning</span>
+              </div>
+              <a href="https://github.com/Grizmo2610/ColorFill" target="_blank"
+                class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-accent transition-colors">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                View on GitHub
+                <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Anime Recommendation -->
+          <div
+            class="reveal project-card bg-dark-800 border border-dark-600 rounded-xl overflow-hidden group">
+            <div class="overflow-hidden h-48">
+              <img src="http://static.photos/gaming/640x360/30"
+                alt="Anime Recommendation"
+                class="project-img w-full h-full object-cover transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                <span
+                  class="text-accent font-mono text-xs uppercase tracking-wider">Recommendation
+                  System</span>
+              </div>
+              <h3
+                class="text-xl font-bold mb-3 group-hover:text-accent transition-colors">Anime
+                Recommendation Engine</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                Processed 71M+ user reviews to build a collaborative filtering
+                system achieving ~80% rating prediction accuracy using SVD and
+                matrix factorization.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">SVD</span>
+                <span
+                  class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">Collaborative
+                  Filtering</span>
+                <span
+                  class="px-2 py-1 bg-dark-700 text-accent text-xs rounded font-mono">TensorFlow/Keras</span>
+              </div>
+              <a href="https://github.com/Grizmo2610" target="_blank"
+                class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-accent transition-colors">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                View on GitHub
+                <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-24 relative">
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="reveal">
+          <div class="flex items-center gap-3 mb-16">
+            <div class="h-px flex-1 bg-dark-600"></div>
+            <span
+              class="font-mono text-sm text-accent tracking-wider">education</span>
+            <div class="h-px flex-1 bg-dark-600"></div>
+          </div>
+        </div>
+
+        <div class="reveal grid md:grid-cols-2 gap-8">
+          <!-- Education Card -->
+          <div
+            class="bg-dark-800 border border-dark-600 rounded-xl p-8 hover:border-accent/30 transition-all duration-300">
+            <div class="flex items-start gap-5">
+              <div
+                class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="graduation-cap" class="w-7 h-7 text-accent"></i>
+              </div>
+              <div>
+                <span class="text-accent font-mono text-sm">2021 – 2026</span>
+                <h3 class="text-xl font-bold mt-1">VNU Hanoi University of
+                  Science</h3>
+                <p class="text-gray-400 mt-2">B.Sc. Mathematics and Computer
+                  Science</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Awards -->
+          <div class="space-y-4">
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+              <i data-lucide="trophy" class="w-5 h-5 text-accent"></i>
+              Awards & Recognition
+            </h3>
+            <div
+              class="bg-dark-800 border border-dark-600 rounded-xl p-5 hover:border-accent/30 transition-all duration-300">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span
+                    class="text-accent font-mono font-bold text-xs">#47</span>
+                </div>
+                <div>
+                  <p class="font-medium text-sm">Top 47 — Detect AI vs.
+                    Human-Generated Images Competition</p>
+                  <span class="text-xs text-gray-500 font-mono">2024</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-dark-800 border border-dark-600 rounded-xl p-5 hover:border-accent/30 transition-all duration-300">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="award" class="w-4 h-4 text-accent"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-sm">Consolation Prize — Student
+                    Scientific Research Conference</p>
+                  <span class="text-xs text-gray-500 font-mono">Application of
+                    Fourier Transform in signal/image processing</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-4">Liên hệ <span
-            class="text-indigo-600">Với tôi</span></h2>
-        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Bạn
-          có dự án cần tư vấn hoặc câu hỏi về AI? Hãy liên hệ ngay để
-          được hỗ trợ.</p>
+    <section id="contact" class="py-24 relative overflow-hidden">
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[150px]"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="reveal">
+          <div class="flex items-center gap-3 mb-16">
+            <div class="h-px flex-1 bg-dark-600"></div>
+            <span
+              class="font-mono text-sm text-accent tracking-wider">get_in_touch</span>
+            <div class="h-px flex-1 bg-dark-600"></div>
+          </div>
+        </div>
 
-        <div class="flex flex-col md:flex-row gap-8">
-          <div class="md:w-1/2">
-            <div class="bg-indigo-50 p-8 rounded-xl">
-              <h3 class="text-xl font-semibold mb-6">Thông tin
-                liên hệ</h3>
+        <div class="reveal max-w-2xl mx-auto text-center">
+          <h2 class="text-4xl sm:text-5xl font-bold mb-6">
+            Let's Build <span class="text-accent">Something</span><br>Together
+          </h2>
+          <p class="text-gray-400 mb-12">
+            Actively seeking a full-time AI/ML Engineer role. If you're building
+            scalable, real-world AI systems — I'd love to hear from you.
+          </p>
 
-              <div class="space-y-4">
-                <div class="flex items-start">
-                  <div
-                    class="bg-indigo-100 p-3 rounded-full mr-4">
-                    <i
-                      class="fas fa-envelope text-indigo-600"></i>
-                  </div>
-                  <div>
-                    <h4
-                      class="font-medium text-gray-700">Email</h4>
-                    <a href="mailto:hoangtuantu893@gmail.com"
-                      class="text-indigo-600 hover:underline">hoangtuantu893@gmail.com</a>
-                  </div>
-                </div>
-
-                <div class="flex items-start">
-                  <div
-                    class="bg-indigo-100 p-3 rounded-full mr-4">
-                    <i
-                      class="fas fa-phone-alt text-indigo-600"></i>
-                  </div>
-                  <div>
-                    <h4
-                      class="font-medium text-gray-700">Điện
-                      thoại</h4>
-                    <a href="tel:+84987654321"
-                      class="text-indigo-600 hover:underline">+84
-                      379 061 825</a>
-                  </div>
-                </div>
-
-                <div class="flex items-start">
-                  <div
-                    class="bg-indigo-100 p-3 rounded-full mr-4">
-                    <i
-                      class="fas fa-map-marker-alt text-indigo-600"></i>
-                  </div>
-                  <div>
-                    <h4
-                      class="font-medium text-gray-700">Địa
-                      chỉ</h4>
-                    <p class="text-gray-600">Vũ Trọng Phụng, Thanh Xuân, Hà
-                      Nội</p>
-                  </div>
-                </div>
+          <div class="grid sm:grid-cols-2 gap-4 mb-8">
+            <a href="mailto:hoangtuantu893@gmail.com"
+              class="flex items-center gap-3 bg-dark-800 border border-dark-600 rounded-xl p-4 hover:border-accent/50 hover:bg-dark-700 transition-all duration-300 group">
+              <div
+                class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                <i data-lucide="mail" class="w-5 h-5 text-accent"></i>
               </div>
-
-              <div class="mt-8">
-                <h3 class="text-xl font-semibold mb-4">Mạng xã
-                  hội</h3>
-                <div class="flex space-x-3">
-                  <a href="https://www.linkedin.com/in/t%C3%BA-ho%C3%A0ng-431113368/"
-                    class="bg-white p-3 rounded-full text-indigo-600 hover:bg-indigo-100 transition">
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                  <a href="https://github.com/Grizmo2610"
-                    class="bg-white p-3 rounded-full text-indigo-600 hover:bg-indigo-100 transition">
-                    <i class="fab fa-github"></i>
-                  </a>
-                  <a href="https://www.facebook.com/tuantu2610/"
-                    class="bg-white p-3 rounded-full text-indigo-600 hover:bg-indigo-100 transition">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </div>
+              <div class="text-left">
+                <p class="text-xs text-gray-500">Email</p>
+                <p
+                  class="text-sm text-gray-300 group-hover:text-white transition-colors">hoangtuantu893@gmail.com</p>
               </div>
-            </div>
+            </a>
+
+            <a href="tel:+84379061825"
+              class="flex items-center gap-3 bg-dark-800 border border-dark-600 rounded-xl p-4 hover:border-accent/50 hover:bg-dark-700 transition-all duration-300 group">
+              <div
+                class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                <i data-lucide="phone" class="w-5 h-5 text-accent"></i>
+              </div>
+              <div class="text-left">
+                <p class="text-xs text-gray-500">Phone</p>
+                <p
+                  class="text-sm text-gray-300 group-hover:text-white transition-colors">+84
+                  379 061 825</p>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/grizmo" target="_blank"
+              class="flex items-center gap-3 bg-dark-800 border border-dark-600 rounded-xl p-4 hover:border-accent/50 hover:bg-dark-700 transition-all duration-300 group">
+              <div
+                class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                <i data-lucide="linkedin" class="w-5 h-5 text-accent"></i>
+              </div>
+              <div class="text-left">
+                <p class="text-xs text-gray-500">LinkedIn</p>
+                <p
+                  class="text-sm text-gray-300 group-hover:text-white transition-colors">linkedin.com/in/grizmo</p>
+              </div>
+            </a>
+
+            <a href="https://grizmo.netlify.app" target="_blank"
+              class="flex items-center gap-3 bg-dark-800 border border-dark-600 rounded-xl p-4 hover:border-accent/50 hover:bg-dark-700 transition-all duration-300 group">
+              <div
+                class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                <i data-lucide="globe" class="w-5 h-5 text-accent"></i>
+              </div>
+              <div class="text-left">
+                <p class="text-xs text-gray-500">Website</p>
+                <p
+                  class="text-sm text-gray-300 group-hover:text-white transition-colors">grizmo.netlify.app</p>
+              </div>
+            </a>
           </div>
 
-          <div class="md:w-1/2">
-            <form id="contact-form" class="bg-white p-8 rounded-xl shadow-md">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label for="name"
-                    class="block text-sm font-medium text-gray-700 mb-1">Họ và
-                    tên</label>
-                  <input type="text" id="name" name="name" required
-                    autocomplete="name"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
-                </div>
-                <div>
-                  <label for="email"
-                    class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                  <input type="text" id="email" name="email" required
-                    autocomplete="email"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
-                </div>
-              </div>
-              <div class="mb-6">
-                <label for="subject"
-                  class="block text-sm font-medium text-gray-700 mb-1">Chủ
-                  đề</label>
-                <input type="text" id="subject" name="subject" required
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
-              </div>
-              <div class="mb-6">
-                <label for="message"
-                  class="block text-sm font-medium text-gray-700 mb-1">Nội
-                  dung</label>
-                <textarea id="text" name="message" rows="5" required
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
-              </div>
-              <button type="submit"
-                class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-lg font-medium transition duration-300">
-                <i class="fas fa-paper-plane mr-2"></i>
-                Gửi tin nhắn
-              </button>
-            </form>
-          </div>
-
+          <a href="mailto:hoangtuantu893@gmail.com"
+            class="inline-flex items-center gap-3 bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg font-medium text-lg transition-all hover:shadow-xl hover:shadow-accent/25 group">
+            <i data-lucide="send"
+              class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+            Send Me a Message
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="border-t border-dark-700 py-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div class="md:col-span-2">
-            <h3 class="text-xl font-bold mb-4">AI<span
-                class="text-indigo-400">Expert</span></h3>
-            <p class="text-gray-400 mb-4">Lập trình viên Trí tuệ Nhân tạo với
-              kiến thức trong nghiên cứu phát triển các giải pháp AI ứng dụng
-              thực tế.</p>
-            <div class="flex space-x-3">
-              <a href="https://www.linkedin.com/in/t%C3%BA-ho%C3%A0ng-431113368/"
-                class="text-gray-400 hover:text-white transition">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="https://github.com/Grizmo2610"
-                class="text-gray-400 hover:text-white transition">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://www.facebook.com/tuantu2610/"
-                class="text-gray-400 hover:text-white transition">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </div>
+        <div
+          class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="font-mono text-sm text-gray-500">
+            <span class="text-accent">></span> Designed & Built by <span
+              class="text-white">Hoang Tuan Tu</span>
           </div>
-        </footer>
+          <div class="flex items-center gap-4">
+            <a href="https://github.com/Grizmo2610" target="_blank"
+              class="text-gray-500 hover:text-accent transition-colors">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+            <a href="https://linkedin.com/in/grizmo" target="_blank"
+              class="text-gray-500 hover:text-accent transition-colors">
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+            <a href="mailto:hoangtuantu893@gmail.com"
+              class="text-gray-500 hover:text-accent transition-colors">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-        <!-- Back to top button -->
-        <button id="back-to-top"
-          class="fixed bottom-8 right-8 bg-indigo-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
-          <i class="fas fa-arrow-up"></i>
-        </button>
+    <!-- Back to top button -->
+    <button id="backToTop"
+      class="fixed bottom-6 right-6 w-12 h-12 bg-accent hover:bg-accent-dark text-white rounded-full shadow-lg shadow-accent/25 flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none z-50">
+      <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
 
-        <script src="script.js"></script>
-        <script type="text/javascript"
-          src="https://cdn.emailjs.com/dist/email.min.js"></script>
-        <script type="text/javascript">
-          emailjs.init('n65_60mG85-KFx7DD');
-
-          document.getElementById('contact-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            
-            emailjs.sendForm('service_e9rjof8', 'template_6m1r15g', this)
-              .then(function () {
-                alert('Gửi thành công!');
-                document.getElementById('contact-form').reset();
-              }, function (error) {
-                alert('Gửi thất bại. Vui lòng thử lại.');
-                console.error('EmailJS Error:', error);
-              });
-          });
-        </script>
-      </body>
-    </html>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
